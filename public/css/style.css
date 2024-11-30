@@ -1,0 +1,125 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4ef; /* Light sage green */
+    color: #6d4c41; /* Medium brown */
+  }
+  
+  /* Navbar Styling */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d5e5cf; /* Sage green */
+    padding: 15px 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .logo img {
+    max-height: 50px;
+  }
+  
+  .nav-bar {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Space between menu items */
+    margin: 0 auto; /* Center the navbar items */
+  }
+  
+  .nav-bar li {
+    position: relative;
+  }
+  
+  .nav-bar li a {
+    text-decoration: none;
+    color: #6d4c41;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .nav-bar li a:hover {
+    background-color: #b38f6a; /* Light brown hover background */
+    color: white;
+  }
+  
+  /* Dropdown Menu Styling */
+  .dropdown {
+    list-style: none;
+    position: absolute;
+    top: 100%; /* Position below the parent menu item */
+    left: 0;
+    background-color: #d5e5cf; /* Sage green */
+    padding: 10px 0;
+    margin: 0;
+    display: none; /* Hidden by default */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 1000;
+  }
+  
+  .dropdown li {
+    padding: 5px 20px;
+  }
+  
+  .dropdown li a {
+    color: #6d4c41;
+    font-weight: normal;
+    display: block;
+  }
+  
+  .dropdown li a:hover {
+    background-color: #b38f6a; /* Light brown on hover */
+    color: white;
+  }
+  
+  /* Show Dropdown on Hover */
+  .nav-bar li:hover .dropdown {
+    display: block; /* Show dropdown menu */
+  }
+  
+  /* Icon Section */
+  .nav-icons {
+    display: flex;
+    gap: 15px; /* Spacing between icons */
+  }
+  
+  .nav-icons a {
+    text-decoration: none;
+    color: #6d4c41;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-icons a:hover {
+    color: #b38f6a; /* Light brown on hover */
+  }
+  
+  /* Main Section */
+  main {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #6d4c41;
+  }
+  
+  /* Product Grid */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .product-item {
+    background-color: #e7d4c1;
+    height: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
