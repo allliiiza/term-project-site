@@ -20,6 +20,7 @@ body {
   
   .logo img {
     max-height: 50px;
+    margin-left: 20px;
   }
   
   .nav-bar {
@@ -83,8 +84,9 @@ body {
   
   /* Icon Section */
   .nav-icons {
-    display: flex;
+    display: inline-flex;
     gap: 15px; /* Spacing between icons */
+    justify-content: flex-end;  
   }
   
   .nav-icons a {
