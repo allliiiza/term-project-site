@@ -119,7 +119,7 @@ body {
     gap: 10px;
     padding: 10px;
     justify-content: center; 
-    align-content: center;
+    align-content: baseline;
     overflow: hidden;
   }
   
@@ -250,24 +250,9 @@ body {
     color: #b38f6a;
   }
 
-  @media (max-width: 768px) { /* Adjust breakpoint as needed */
+  @media (max-width: 1200px) {
     .trending-product {
-      grid-template-columns: 1fr; /* Single-column layout for small screens */
+      min-height: 30vh;
+      max-height: 40vh;
     }
-  
-    .trending-item-1 {
-      display: flex;
-      align-items: center;
-      justify-content: space-around; 
-
-      grid-column: span 1; /* Takes only 1 column */
-      grid-row: span 1;    /* Shrinks to 1 row */
-      height: 50vh;        /* Adjust height for smaller screens */
-    }
-  
-    .trending-item-2,
-    .trending-item-3 {
-      display: none; /* Allow dynamic height for smaller items */
-    }
-  }
-  
+}
