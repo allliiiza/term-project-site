@@ -119,23 +119,23 @@ body {
     color: #6d4c41;
    }
 
-    .empty-bag-container {
-  width: 66%;
-  height: 55%; /* Adjust height as needed */
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid #6d4c41; /* Solid border around the box */
-  margin-top: 20px; /* Space above the empty bag box */
-  margin-left: 30px;
-}
+  .empty-bag-container {
+      width: 66%;
+      height: 55%; 
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #6d4c41; 
+      margin-top: 20px; 
+      margin-left: 30px;
+  }
 
-.empty-bag-message {
-  font-size: 2.5rem;
-  justify-content: center; 
-  align-items: center;
-}
+  .empty-bag-message {
+      font-size: 2.5rem;
+      justify-content: center; 
+      align-items: center;
+   }
 
 h3 {
   font-size: 1rem; 
@@ -143,6 +143,7 @@ h3 {
   margin-top: 10px; 
 }
 
+/* rightside-bar Styling */
 .sidebar {
   background-color: #9b9e9c6d;
   position: absolute;
@@ -163,22 +164,22 @@ h3 {
 .sidebar ul li {
   list-style: none; 
   margin-bottom: 10px; 
-  border-top: 1px solid #4d4f4e6d;
+  border-top: 1px solid #4d4f4e6d; /* Ligne at the top of each list */
   width: 80%;
 }
 
+/* buy button */
 .buy {
   display: block;
-  width: 80%; /* Make the button take up full width of sidebar */
+  width: 80%; 
   padding: 15px;
   font-size: 18px;
-  background-color: #ebffe4; /* Button color */
+  background-color: #ebffe4; 
   color: #6d4c41;
   border: none;
-  cursor: pointer;
-  margin-top: 20px; /* Add space above the button */
+  margin-top: 20px; 
   margin-left: 10%;
-  text-align: center; /* Center the text inside the button */
+  text-align: center; 
 }
 
 .buy:hover {
