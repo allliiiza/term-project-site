@@ -106,9 +106,84 @@ body {
     text-align: center;
   }    
   
+  p{
+    margin-left: 5%;
+  }
+
   h1 {
     color: #6d4c41;
+    margin-left: 5%;
   }
+
+   h2{
+    color: #6d4c41;
+   }
+
+    .empty-bag-container {
+  width: 66%;
+  height: 55%; /* Adjust height as needed */
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #6d4c41; /* Solid border around the box */
+  margin-top: 20px; /* Space above the empty bag box */
+  margin-left: 30px;
+}
+
+.empty-bag-message {
+  font-size: 2.5rem;
+  justify-content: center; 
+  align-items: center;
+}
+
+h3 {
+  font-size: 1rem; 
+  color: #6d4c41;
+  margin-top: 10px; 
+}
+
+.sidebar {
+  background-color: #9b9e9c6d;
+  position: absolute;
+  width: 27%;
+  right: 0;
+  height: 100vh;
+}
+
+.sidebar ul {
+  margin-top: 20%; 
+}
+
+.sidebar li{
+  list-style: none;
+  padding: 10px;
+}
+
+.sidebar ul li {
+  list-style: none; 
+  margin-bottom: 10px; 
+  border-top: 1px solid #4d4f4e6d;
+  width: 80%;
+}
+
+.buy {
+  display: block;
+  width: 80%; /* Make the button take up full width of sidebar */
+  padding: 15px;
+  font-size: 18px;
+  background-color: #ebffe4; /* Button color */
+  color: #6d4c41;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px; /* Add space above the button */
+  margin-left: 10%;
+  text-align: center; /* Center the text inside the button */
+}
+
+.buy:hover {
+  background-color: #d5e5cf;
+}
   
   /* Test Trending section */
   .trending-product {
