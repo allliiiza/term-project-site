@@ -154,7 +154,8 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   }
   
-  .trending-desc .btn {
+  .trending-desc .btn,
+  .product-page .btn {
     display: inline-block;
     padding: 14px 42px;
     text-shadow: none;
@@ -168,7 +169,8 @@ body {
     transition: all .6s;
   }
 
-  .trending-desc a:hover {
+  .trending-desc a:hover,
+  .product-page a:hover {
     color:white;
     background-color: #6d4c41;
   }
@@ -249,6 +251,40 @@ body {
   .icons a:hover{
     color: #b38f6a;
   }
+
+ /* Product Page */
+  .product-page{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+ .product-page .product-info {
+  width: 50rem;
+  border-radius: 10px;
+  box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.1);
+  padding: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+
+ .product-page .product-details {
+  margin-left: 5rem;
+ }
+
+ .product-details h1,
+ .product-details h3,
+ .product-details p {
+  margin-bottom: 3rem;
+}
+
+ .product-page .product-details h1 {
+  font-size: 2rem;
+ }
+
+
+
 
   @media (max-width: 1200px) {
     .trending-product {
