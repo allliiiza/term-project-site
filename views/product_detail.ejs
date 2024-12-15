@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= product.name %> - Product Details</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+          <!-- Logo Section -->
+          <div class="logo">
+              <img src="images/logo.jpeg" alt="TAD FAB Logo">
+          </div>
+    
+          <!-- Menu Items with Dropdowns -->
+          <ul class="nav-bar">
+            <li><a href="/">Home</a></li>
+            <li>
+              <a href="/products/tops">Tops</a>
+              <ul class="dropdown">
+                <li><a href="/products/tops/casual">Casual Tops</a></li>
+                <li><a href="/products/tops/formal">Formal Tops</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/products/bottoms">Bottoms</a>
+              <ul class="dropdown">
+                <li><a href="/products/bottoms/jeans">Jeans</a></li>
+                <li><a href="/products/bottoms/shorts">Shorts</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/products/shoes">Shoes</a>
+              <ul class="dropdown">
+                <li><a href="/products/shoes/sneakers">Sneakers</a></li>
+                <li><a href="/products/shoes/heels">Heels</a></li>
+              </ul>
+            </li>
+          </ul>
+    
+          <!-- Icon Section -->
+          <div class="nav-icons">
+            <a href="/shop/search"><i class="fas fa-search"></i></a>
+            <a href="/profile"><i class="fas fa-user"></i></a>
+            <a href="/shop/favorites"><i class="fas fa-heart"></i></a>
+            <a href="/shop/cart"><i class="fas fa-shopping-cart"></i></a>
+          </div>
+        </nav>
+    </header>
+    <main class="product-page">
+        <section class="product-info">
+            <img src="<%= product.imageURL %>" alt="<%= product.name %>" class="product-image">
+            <div class="product-details">
+                <h1><%= product.name %></h1>
+                <h3>$<%= product.price %></h3>
+                <p><%= product.description %></p>
+                <select id="dropdown">
+                    <option>Small</option>
+                    <option>Medium</option>
+                    <option>Large</option>
+                </select>
+                <form action="/cart/add/<%= product._id %>" method="POST">
+                    <button type="submit" class="btn">Add to Cart</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <a href="/">Back to product list</a>
+</body>
+</html>

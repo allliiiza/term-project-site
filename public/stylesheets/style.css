@@ -1,0 +1,353 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f4ef; /* Light sage green */
+  color: #6d4c41; /* Medium brown */
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d5e5cf; /* Sage green */
+  padding: 15px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.logo img {
+  max-height: 50px;
+  margin-left: 20px;
+}
+
+.nav-bar {
+  list-style: none;
+  display: flex;
+  gap: 30px; /* Space between menu items */
+  margin: 0 auto; /* Center the navbar items */
+}
+
+.nav-bar li {
+  position: relative;
+}
+
+.nav-bar li a {
+  text-decoration: none;
+  color: #6d4c41;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.nav-bar li a:hover {
+  background-color: #b38f6a; /* Light brown hover background */
+  color: white;
+}
+
+/* Dropdown Menu Styling */
+.dropdown {
+  list-style: none;
+  position: absolute;
+  top: 100%; /* Position below the parent menu item */
+  left: 0;
+  background-color: #d5e5cf; /* Sage green */
+  padding: 10px 0;
+  margin: 0;
+  display: none; /* Hidden by default */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.dropdown li {
+  padding: 5px 20px;
+}
+
+.dropdown li a {
+  color: #6d4c41;
+  font-weight: normal;
+  display: block;
+}
+
+.dropdown li a:hover {
+  background-color: #b38f6a; /* Light brown on hover */
+  color: white;
+}
+
+/* Show Dropdown on Hover */
+.nav-bar li:hover .dropdown {
+  display: block; /* Show dropdown menu */
+}
+
+/* Icon Section */
+.nav-icons {
+  display: inline-flex;
+  gap: 15px; /* Spacing between icons */
+  justify-content: flex-end;  
+}
+
+.nav-icons a {
+  text-decoration: none;
+  color: #6d4c41;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+
+.nav-icons a:hover {
+  color: #b38f6a; /* Light brown on hover */
+}
+
+/* Main Section */
+.main {
+  padding: 50px;
+  text-align: center;
+}    
+
+p{
+  margin-left: 5%;
+}
+
+h1 {
+  color: #6d4c41;
+  margin-left: 5%;
+}
+
+ h2{
+  color: #6d4c41;
+ }
+
+.empty-bag-container {
+    width: 66%;
+    height: 55%; 
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #6d4c41; 
+    margin-top: 20px; 
+    margin-left: 30px;
+}
+
+.empty-bag-message {
+    font-size: 2.5rem;
+    justify-content: center; 
+    align-items: center;
+ }
+
+h3 {
+font-size: 1rem; 
+color: #6d4c41;
+margin-top: 10px; 
+}
+
+/* rightside-bar Styling */
+.sidebar {
+background-color: #9b9e9c6d;
+position: absolute;
+width: 27%;
+right: 0;
+height: 100vh;
+}
+
+.sidebar ul {
+margin-top: 20%; 
+}
+
+.sidebar li{
+list-style: none;
+padding: 10px;
+}
+
+.sidebar ul li {
+list-style: none; 
+margin-bottom: 10px; 
+border-top: 1px solid #4d4f4e6d; /* line at the top of each list */
+width: 80%;
+}
+
+/* buy button */
+.buy {
+display: block;
+width: 75%; 
+padding: 10px;
+font-size: 20px;
+background-color: white; 
+color: #6d4c41;
+border: 1px solid white;
+border-radius: 10px;
+margin-top: 20px; 
+margin-left: 12.5%;
+text-align: center; 
+}
+
+.buy:hover {
+background-color: #d5e5cf;
+}
+
+
+
+/* Product Grid */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Flexible column layout */
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 10px;
+}
+
+.product-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20rem;
+  border-radius: 10px;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  background-color: #fff; 
+  transition: transform 0.3s ease;
+}
+
+.product-item:hover {
+  transform: scale(1.05);
+}
+
+/* Product Image */
+.product-image {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Product Text */
+.product-name {
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.product-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.product-price {
+  font-weight: bold;
+  color: #e60023;
+  margin-bottom: 0.5rem;
+}
+
+.product-quantity {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* View Details Link */
+.product-link {
+  text-decoration: none;
+  color: #007BFF;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: 1px solid #007BFF;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.product-link:hover {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+
+
+/* Product Details Page */
+.product-page {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.product-page .product-info {
+  width: 50rem;
+  border-radius: 10px;
+  box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.1);
+  padding: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-page .product-details {
+  margin-left: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.product-details h1,
+.product-details h3,
+.product-details p,
+.product-details select {
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.product-page .product-details h1 {
+  font-size: 2rem;
+}
+
+.btn {
+  color: #007BFF;
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid #007BFF;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+/* Styling for the product size dropdown */
+#dropdown {
+  width: 200px;
+  padding: 10px;
+  margin-top: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+/* Hover effect for dropdown */
+#dropdown:hover {
+  border-color: #007BFF; 
+}
+
+
+
+
+
+
+@media (max-width: 1200px) {
+  .trending-product {
+    min-height: 30vh;
+    max-height: 40vh;
+  }
+}
