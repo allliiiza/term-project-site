@@ -26,34 +26,6 @@ router.post('/login', async (req, res) => {
     }
 });
 
-// Register route
-router.post('/register', async (req, res) => {
-    try {
-        const { email, password } = req.body;
-        
-        // Check if user exists
-        let user = await User.findOne({ email });
-        if (user) {
-            return res.status(400).send('User already exists');
-        }
-
-        // Hash password
-        const salt = await bcrypt.genSalt(10);
-        const hashedPassword = await bcrypt.hash(password, salt);
-
-        // Create new user
-        user = new User({
-            email,
-            password: hashedPassword
-        });
-
-        await user.save();
-        res.redirect('/users/login');
-    } catch (err) {
-        res.status(500).send('Server error');
-    }
-});
-
 router.post('/logout', (req, res) => {
     req.session.destroy((err) => {
         if (err) {
