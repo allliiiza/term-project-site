@@ -3,13 +3,15 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const session = require('express-session');
 
 // import mongoose
-// const mongoose = require('mongoose');
+ const mongoose = require('mongoose');
 
 // MongoDB connection string
-// const mongoDB = 'mongodb+srv://mernelotrisha:dit2004IoPJgK9n9@cluster0.kq8hk.mongodb.net/local_library?retryWrites=true&w=majority';
+const mongoDB = 'mongodb+srv://mernelotrisha:dit2004IoPJgK9n9@cluster0.kq8hk.mongodb.net/local_library?retryWrites=true&w=majority';
 
+mongoose.connect(mongoDB);
 /////
 
 // Set up mongoose connection
@@ -61,7 +63,29 @@ app.use(express.json());
 
 app.use(express.static('public'));
 
+app.use((req, res, next) => {
+    console.log('Request URL:', req.url);
+    next();
+});
 
+app.get('/profile', (req, res, next) => {
+    console.log('Profile route hit');
+    try {
+        console.log('Attempting to render profile');
+        res.render('profile', {}, (err, html) => {
+            if (err) {
+                console.error('Profile render error:', err);
+                next(err);
+                return;
+            }
+            console.log('Profile rendered successfully');
+            res.send(html);
+        });
+    } catch (err) {
+        console.error('Profile route error:', err);
+        next(err);
+    }
+});
 
 // use routes
 app.use('/', indexRouter);
@@ -86,5 +110,32 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+const express = require('express');
+const app = express();
+const path = require('path');
+
+// Set the view engine to ejs
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views')); // Adjust the path as necessary
+
+// Define the route for the profile page
+app.get('/profile', (req, res) => {
+   res.send('Profile Page');
+});
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+// Add this before your routes
+app.use(session({
+    secret: 'your_secret_key',
+    resave: false,
+    saveUninitialized: false,
+    cookie: { secure: process.env.NODE_ENV === 'production' }
+}));
 
 module.exports = app;
