@@ -1,0 +1,14 @@
+<% if (products && products.length > 0) { %>
+  <ul class="product-list">
+    <% products.forEach(function(product) { %>
+      <li class="product-item">
+        <h2 class="product-name"><%= product.name %></h2>
+        <img class="product-image" src="<%= product.imageURL %>" alt="<%= product.name %>">
+        <p class="product-price">Price: $<%= product.price %></p>
+        <a class="product-link" href="/products/<%= product._id %>">View Details</a>
+      </li>
+    <% }); %>
+  </ul>
+<% } else { %>
+  <p class="no-products">No products available.</p>
+<% } %>
