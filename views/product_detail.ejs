@@ -18,19 +18,18 @@
               <h1><%= product.name %></h1>
               <h3>$<%= product.price %></h3>
               <p><%= product.description %></p>
-              <select id="dropdown">
-                  <option>Small</option>
-                  <option>Medium</option>
-                  <option>Large</option>
-              </select>
+              
+              <!-- Debugging Product ID -->
+              <!-- <p>Product ID for Debugging: <strong><%= product._id %></strong></p> -->
+              
+              <!-- Corrected Form -->
               <form action="/cart/add/<%= product._id %>" method="POST">
                   <button type="submit" class="btn">Add to Cart</button>
               </form>
+
               <a href="/" class="btn">Back to product list</a>
           </div>
       </section>
   </main>
-
-    
 </body>
 </html>
