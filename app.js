@@ -4,6 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// import mongoose
+// const mongoose = require('mongoose');
+
+// MongoDB connection string
+// const mongoDB = 'mongodb+srv://mernelotrisha:dit2004IoPJgK9n9@cluster0.kq8hk.mongodb.net/local_library?retryWrites=true&w=majority';
+
+/////
+
+// Set up mongoose connection
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 
@@ -11,13 +20,10 @@ const dev_db_url =
   'mongodb+srv://mernelotrisha:dit2004IoPJgK9n9@cluster0.kq8hk.mongodb.net/local_library?retryWrites=true&w=majority';
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
 
-main().catch((err) => console.log(err));
-async function main() {
-  await mongoose.connect(mongoDB);
-}
+mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('MongoDB Connected'))
+    .catch(err => console.error('MongoDB Connection Error:', err));
 
-// connect to MongoDB
-mongoose.connect(mongoDB);
 
 mongoose.connection.on('connected', () => {
   console.log('Mongoose is connected to MongoDB');
@@ -38,6 +44,7 @@ const productsRouter = require('./routes/products');
 const categoryRouter = require('./routes/category');
 const cartRouter = require('./routes/cart');
 
+
 var app = express();
 
 // view engine setup
@@ -51,7 +58,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 app.use(express.static('public'));
+
+
 
 // use routes
 app.use('/', indexRouter);
