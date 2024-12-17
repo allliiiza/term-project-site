@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TAD FAB - <%= category %> Products</title>
+  <title>TAD FAB - Home</title>
+  <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
     <header>
         <%- include('partials/navbar') %>
-    </header>
-    <main>
-        <!-- Start of Product List -->
-        <div class="main">
-            <h1><%= category %> Products</h1>
-            <section class="product-grid">
-                <%- include('partials/product_list', { products }) %>
-            </section>
-        </div>
-    </main>
+      </header>  <main>
+    <!-- Start of Product List -->
+    <div class="main">
+      <h1 id="trending">Trending Products</h1>
+      <section class="product-grid">
+        <%- include('partials/product_list', { products }) %>
+      </section>
+    </div>
+  </main>
 </body>
 </html>
