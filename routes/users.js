@@ -1,39 +1,10 @@
-const express = require('express');
-const router = express.Router();
-const User = require('../models/user');
-const bcrypt = require('bcryptjs');
 
-// Login route
-router.post('/login', async (req, res) => {
-    try {
-        const { email, password } = req.body;
-        const user = await User.findOne({ email });
-        
-        if (!user) {
-            return res.status(400).send('User not found');
-        }
+var express = require('express');
+var router = express.Router();
 
-        const isMatch = await bcrypt.compare(password, user.password);
-        if (!isMatch) {
-            return res.status(400).send('Invalid password');
-        }
-
-        // Set user session
-        req.session.userId = user._id;
-        res.redirect('/profile');
-    } catch (err) {
-        res.status(500).send('Server error');
-    }
-});
-
-router.post('/logout', (req, res) => {
-    req.session.destroy((err) => {
-        if (err) {
-            console.error('Logout error:', err);
-            return res.status(500).send('Error logging out');
-        }
-        res.redirect('/');
-    });
+/* GET users listing. */
+router.get('/', function(req, res, next) {
+  res.send('respond with a resource');
 });
 
 module.exports = router;
