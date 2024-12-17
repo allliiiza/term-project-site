@@ -106,13 +106,8 @@ body {
   text-align: center;
 }    
 
-p{
-  margin-left: 5%;
-}
-
 h1 {
   color: #6d4c41;
-  margin-left: 5%;
 }
 
  h2{
@@ -295,16 +290,24 @@ background-color: #d5e5cf;
   align-items: flex-start;
 }
 
-.product-details h1,
-.product-details h3,
-.product-details p,
-.product-details select {
+.product-details, 
+.product-details select,
+.product-details form,
+.product-details a {
   margin-bottom: 3rem;
   text-align: left;
 }
 
 .product-page .product-details h1 {
   font-size: 2rem;
+}
+
+.product-info img {
+  height: auto;
+  width: 20rem;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
 .btn {
@@ -321,6 +324,11 @@ background-color: #d5e5cf;
 .btn:hover {
   background-color: #007BFF;
   color: #fff;
+}
+
+.btn a {
+  display:flex;
+  align-content: flex-end;
 }
 
 /* Styling for the product size dropdown */
