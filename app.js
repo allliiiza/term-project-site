@@ -35,7 +35,6 @@ var usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
 const categoryRouter = require('./routes/category');
 const cartRouter = require('./routes/cart');
-const profileRouter = require('./routes/profile');
 
 var app = express();
 
@@ -54,7 +53,6 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // use routes
-app.use('/profile', profileRouter);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
