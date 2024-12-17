@@ -100,6 +100,25 @@ body {
   color: #b38f6a; /* Light brown on hover */
 }
 
+.login-container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #a5e28e;
+}
+
+.close-button{
+  background: #6d4c41;
+  padding: 20px 30px;
+  border-radius: 7px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.5s 0.3s ease-in;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 /* Main Section */
 .main {
   padding: 50px;
