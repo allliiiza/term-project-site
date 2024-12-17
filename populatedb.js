@@ -8,21 +8,25 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log('Connected to MongoDB');
 
-        // Adding more products
+        // Adding more products, add them in by typing "node populatedb.js"
         const products = [
             { 
                 name: 'T-shirt', 
                 description: 'A comfortable cotton T-shirt', 
                 price: 19.99, 
                 quantity: 50, 
-                imageURL: '/images/t-shirt_01.jpg' 
+                imageURL: '/images/t-shirt_01.jpg',
+                category: '',
+                subcategory: '' 
             },
             { 
                 name: 'Jeans', 
                 description: 'Stylish denim jeans', 
                 price: 39.99, 
                 quantity: 30, 
-                imageURL: '/images/jeans_02.jpg' 
+                imageURL: '/images/jeans_02.jpg', 
+                category: '',
+                subcategory: '' 
             },
             // Add more products here with their image URLs
         ];
