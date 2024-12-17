@@ -4,11 +4,17 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-// import mongoose
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+mongoose.set("strictQuery", false);
 
-// MongoDB connection string
-const mongoDB = 'mongodb+srv://mernelotrisha:dit2004IoPJgK9n9@cluster0.kq8hk.mongodb.net/local_library?retryWrites=true&w=majority';
+const dev_db_url =
+  'mongodb+srv://mernelotrisha:dit2004IoPJgK9n9@cluster0.kq8hk.mongodb.net/local_library?retryWrites=true&w=majority';
+const mongoDB = process.env.MONGODB_URI || dev_db_url;
+
+main().catch((err) => console.log(err));
+async function main() {
+  await mongoose.connect(mongoDB);
+}
 
 // connect to MongoDB
 mongoose.connect(mongoDB);
@@ -29,8 +35,8 @@ mongoose.connection.on('disconnected', () => {
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
+const categoryRouter = require('./routes/category');
 // const cartRouter = require('./routes/cart');
-
 
 var app = express();
 
@@ -45,14 +51,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
 app.use(express.static('public'));
-
 
 // use routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
+app.use('/products/category', categoryRouter);
 // app.use('/cart', cartRouter);
 
 
