@@ -7,29 +7,48 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
+  <!-- Header with Navbar -->
   <header>
     <%- include('partials/navbar') %>
   </header>
 
+  <!-- Main Product Section -->
   <main class="product-page">
       <section class="product-info">
+          <!-- Product Image -->
           <img src="<%= product.imageURL %>" alt="<%= product.name %>" class="product-image">
+
+          <!-- Product Details -->
           <div class="product-details">
               <h1><%= product.name %></h1>
-              <h3>$<%= product.price %></h3>
+              <h3>Price: $<%= product.price %></h3>
               <p><%= product.description %></p>
-              
-              <!-- Debugging Product ID -->
-              <!-- <p>Product ID for Debugging: <strong><%= product._id %></strong></p> -->
-              
-              <!-- Corrected Form -->
+
+              <!-- Product Size Dropdown -->
+              <label for="size">Select Size:</label>
+              <select id="size" name="size">
+                  <option value="Small">Small</option>
+                  <option value="Medium">Medium</option>
+                  <option value="Large">Large</option>
+              </select>
+
+              <!-- Debugging: Display Product ID (Optional) -->
+              <!-- <p>Product ID: <strong><%= product._id %></strong></p> -->
+
+              <!-- Add to Cart Form -->
               <form action="/cart/add/<%= product._id %>" method="POST">
                   <button type="submit" class="btn">Add to Cart</button>
               </form>
 
-              <a href="/" class="btn">Back to product list</a>
+              <!-- Back to Product List -->
+              <a href="/" class="btn">Back to Product List</a>
           </div>
       </section>
   </main>
+
+  <!-- Footer Section -->
+  <footer>
+      <p>&copy; 2024 TAD FAB. All rights reserved.</p>
+  </footer>
 </body>
 </html>
