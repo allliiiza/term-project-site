@@ -4,6 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// import mongoose
+// const mongoose = require('mongoose');
+
+// MongoDB connection string
+// const mongoDB = 'mongodb+srv://mernelotrisha:dit2004IoPJgK9n9@cluster0.kq8hk.mongodb.net/local_library?retryWrites=true&w=majority';
+
+/////
+
 // Set up mongoose connection
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
@@ -35,6 +43,9 @@ var usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
 const categoryRouter = require('./routes/category');
 const cartRouter = require('./routes/cart');
+const authRouter = require('./routes/auth');
+
+
 
 var app = express();
 
@@ -52,12 +63,16 @@ app.use(express.json());
 
 app.use(express.static('public'));
 
+
+
 // use routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 app.use('/products/category', categoryRouter);
 app.use('/cart', cartRouter);
+app.use('/auth', authRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
